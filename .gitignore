@@ -1,0 +1,28 @@
+# Bytecode / caches Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Pacotes / distribuição
+dist/
+build/
+*.zip
+*.egg-info/
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# IDEs / editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Arquivos temporários do QGIS
+*.qgs~
+*.qgz~

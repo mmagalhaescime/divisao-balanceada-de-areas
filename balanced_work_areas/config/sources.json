@@ -1,0 +1,52 @@
+{
+  "_comentario": "Endpoints e parâmetros de acesso às fontes de dados abertas. Edite este arquivo se algum endpoint mudar — as chaves de fonte ('osm', 'ana', 'ibge', 'google_open_buildings') são o contrato usado por core/edgv_classes.py, core/data_acquisition.py e pela GUI; não renomear.",
+  "versao": "0.1.0",
+  "osm": {
+    "nome": "OpenStreetMap (Overpass API)",
+    "endpoints": [
+      "https://overpass-api.de/api/interpreter",
+      "https://overpass.kumi.systems/api/interpreter",
+      "https://overpass.osm.ch/api/interpreter"
+    ],
+    "timeout_s": 180,
+    "max_tentativas": 3,
+    "backoff_s": 5,
+    "max_area_graus2": 0.25,
+    "formato": "json"
+  },
+  "ana": {
+    "nome": "Hidrografia ANA (SNIRH / Base Hidrográfica Ottocodificada)",
+    "wfs": [
+      "https://www.snirh.gov.br/arquivos/geoserver/ows",
+      "https://www.snirh.gov.br/geoserver/ows"
+    ],
+    "timeout_s": 120,
+    "camadas": {
+      "cursos_dagua": "bho:geoft_bho_2017_5k_trecho_drenagem",
+      "massas_dagua": "bho:geoft_bho_2017_5k_area_drenagem"
+    },
+    "srs_nativo": "EPSG:4674"
+  },
+  "ibge": {
+    "nome": "Geoserviços IBGE (BC250/BCIM)",
+    "wfs": [
+      "https://geoservicos.ibge.gov.br/geoserver/ows"
+    ],
+    "timeout_s": 120,
+    "_comentario_camadas": "O BC250 do IBGE é republicado a cada poucos anos com o ano no nome da camada (ex.: BC250_2019, BC250_2021, BC250_2023...); os nomes antigos sem ano (ex.: BC250_Localidade_P) saem do ar quando uma nova edição substitui a anterior. Confirmado via 'Adicionar Camada WFS/OGC' do QGIS em 2026-08: a edição mais recente e estável é 2023 (havia também uma BC250_2025 com convenção de nome diferente/possivelmente ainda em publicação). Se voltar a falhar, reabra o WFS no QGIS, filtre por 'bc250' e atualize o ano abaixo.",
+    "camadas": {
+      "localidades": "CCAR:BC250_2023_Posic_Geo_Localidade_P",
+      "municipios": "CCAR:BC250_2023_Municipio_A"
+    },
+    "srs_nativo": "EPSG:4674"
+  },
+  "google_open_buildings": {
+    "nome": "Google Open Buildings v3",
+    "tiles_geojson": "https://sites.research.google/open-buildings/tiles.geojson",
+    "url_base_dados": "https://storage.googleapis.com/open-buildings-data/v3/polygons_s2_level_4_gzip",
+    "sufixo_arquivo": "_buildings.csv.gz",
+    "timeout_s": 600,
+    "confianca_minima": 0.7,
+    "_limitacao": "Os arquivos por tile S2 (nível 4) podem ter centenas de MB; o download é transmitido e filtrado pela bbox, mas pode ser demorado. Alternativamente aponte um CSV(.gz) já baixado na interface."
+  }
+}

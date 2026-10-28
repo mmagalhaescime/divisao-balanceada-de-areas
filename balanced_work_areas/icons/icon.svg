@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Ícone do plugin Divisão Balanceada de Áreas.
+  Círculo subdividido em 5 células irregulares de cores distintas,
+  evocando um diagrama de Voronoi particionado em áreas de trabalho.
+  SVG feito à mão (sem binários, sem resources.qrc).
+  Licença: GPL-2.0-or-later, mesmos autores do plugin.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="circulo">
+      <circle cx="32" cy="32" r="29"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#circulo)" stroke="#ffffff" stroke-width="2" stroke-linejoin="round">
+    <!-- células "Voronoi" que ladrilham o quadrado 64x64 (recortadas pelo círculo) -->
+    <polygon points="0,0 38,0 30,26 12,34 0,28" fill="#4c9be8"/>
+    <polygon points="38,0 64,0 64,22 44,30 30,26" fill="#74c476"/>
+    <polygon points="44,30 64,22 64,64 40,64 38,40" fill="#fdae6b"/>
+    <polygon points="12,34 30,26 44,30 38,40 40,64 10,64" fill="#e57373"/>
+    <polygon points="0,28 12,34 10,64 0,64" fill="#b39ddb"/>
+  </g>
+  <!-- pontos geradores -->
+  <g fill="#2f3b52">
+    <circle cx="18" cy="14" r="2.4"/>
+    <circle cx="50" cy="12" r="2.4"/>
+    <circle cx="52" cy="44" r="2.4"/>
+    <circle cx="27" cy="44" r="2.4"/>
+    <circle cx="7" cy="44" r="2.4"/>
+  </g>
+  <!-- contorno da "moldura" -->
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#2f3b52" stroke-width="3"/>
+</svg>

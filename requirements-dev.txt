@@ -1,0 +1,13 @@
+# Dependências de DESENVOLVIMENTO do plugin Divisão Balanceada de Áreas.
+#
+# Observações importantes:
+# - O plugin em si NÃO exige nenhuma dependência externa em tempo de execução:
+#   ele usa apenas a API do QGIS (PyQGIS/Qt), disponível dentro do próprio QGIS.
+# - scipy é dependência OPCIONAL de execução (fallback do diagrama de Voronoi
+#   quando o algoritmo native:voronoipolygons não estiver disponível). Não é
+#   listada aqui como obrigatória; instale-a no Python do QGIS apenas se quiser
+#   o fallback: pip install scipy
+# - O módulo qgis não é instalável via pip; os testes que dependem dele são
+#   pulados automaticamente fora do QGIS (ver tests/conftest.py).
+
+pytest>=7.0

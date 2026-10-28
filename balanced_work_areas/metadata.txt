@@ -1,0 +1,18 @@
+[general]
+name=Divisão Balanceada de Áreas
+qgisMinimumVersion=3.28
+description=Divide uma área de interesse (moldura) em N áreas de trabalho com carga cartográfica equilibrada, usando dados vetoriais de fontes abertas como proxy da complexidade das feições. Apoio à distribuição de atividades no SAP (DSG/Exército Brasileiro).
+version=0.1.0
+author=Matheus Magalhães Cardoso, Bruno Lixandrão Silvestre, Giovana Baroni Cadorin
+email=matheuscadmag@gmail.com
+about=O SAP (Sistema de Apoio à Produção, DSG/Exército Brasileiro) distribui atividades de produção cartográfica a operadores sem considerar a densidade e a complexidade das feições de cada subárea, o que gera desbalanceamento de carga de trabalho. Este plugin divide a moldura de interesse em N áreas de trabalho de carga equilibrada: adquire dados vetoriais de fontes abertas (OpenStreetMap/Overpass, hidrografia ANA, malhas IBGE, Google Open Buildings) ou camadas locais, organizados segundo classes ET-EDGV; reprojeta tudo para SIRGAS 2000 / UTM (fuso detectado automaticamente pelo centroide da moldura, com possibilidade de override); converte pontos, linhas segmentadas a cada d metros e polígonos em uma grade auxiliar de densidade de resolução r, ponderada pelos pesos alfa/beta/gama; particiona a área por diagrama de Voronoi adaptativo ponderado por densidade (geradores amostrados por Poisson-disk) ou por grade regular; calcula a carga de cada célula e agrupa as células em N lotes contíguos cujas cargas respeitam os fatores de experiência e_j de cada operador, minimizando o coeficiente de variação (CV = sigma/mu). O resultado é uma camada vetorial de lotes de trabalho com metadados de carga, integrável ao fluxo do SAP. Todo o processamento pesado roda em segundo plano (QgsTask), com progresso e cancelamento.
+tracker=https://github.com/mmagalhaescime/divisao-balanceada-de-areas/issues
+repository=https://github.com/mmagalhaescime/divisao-balanceada-de-areas
+homepage=https://github.com/mmagalhaescime/divisao-balanceada-de-areas
+tags=voronoi,load balancing,SAP,DSG,cartography,PyQGIS,partitioning
+category=Vector
+icon=icons/icon.svg
+experimental=True
+deprecated=False
+hasProcessingProvider=no
+server=False
