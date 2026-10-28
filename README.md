@@ -8,8 +8,9 @@ vetoriais de fontes abertas como *proxy* da densidade/complexidade das
 feições. Apoio à distribuição de atividades de produção cartográfica no
 **SAP** (Sistema de Apoio à Produção — DSG/Exército Brasileiro).
 
-Autores: Matheus Magalhães Cardoso, Bruno Lixandrão Silvestre,
-Giovana Baroni Cadorin (IME). Licença: GPL-2.0-or-later.
+Autores: Matheus Magalhães Cardoso, Bruno Lixandrão Silvestre e
+Giovana Baroni Cadorin (IME) — ver [Autores](#autores). Licença:
+GPL-2.0-or-later.
 
 ## Instalação
 
@@ -172,3 +173,18 @@ Nenhum teste depende de rede: as fontes de dados são simuladas
   grafo de adjacência, ela é atribuída ao lote de menor carga (a
   conexidade estrita é geometricamente impossível nesse caso);
 - Todas as medidas são em metros no CRS de trabalho (SIRGAS 2000/UTM).
+
+## Autores
+
+Software desenvolvido em conjunto, como Projeto de Fim de Curso (PFC) de
+graduação em Engenharia Cartográfica da Seção de Ensino de Engenharia
+Cartográfica (SE/6) do Instituto Militar de Engenharia (IME), por:
+
+- **Matheus Magalhães Cardoso**
+- **Bruno Lixandrão Silvestre**
+- **Giovana Baroni Cadorin**
+
+Orientador: Prof. Cel Leonardo Assumpção Moreira, D.Sc. (IME).
+
+Para citar este software, use o botão *Cite this repository* do GitHub
+(gerado a partir do arquivo [`CITATION.cff`](CITATION.cff)).

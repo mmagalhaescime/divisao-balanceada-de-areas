@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "Se você utilizar este software, por favor cite-o conforme abaixo."
+title: "Divisão Balanceada de Áreas"
+abstract: >-
+  Plugin QGIS que divide uma área de interesse em áreas de trabalho com
+  carga cartográfica equilibrada, usando dados vetoriais de fontes abertas
+  como proxy da complexidade das feições, em apoio ao Sistema de Apoio à
+  Produção (SAP) da DSG/Exército Brasileiro. Desenvolvido como Projeto de
+  Fim de Curso de Engenharia Cartográfica do Instituto Militar de Engenharia.
+type: software
+authors:
+  - given-names: "Matheus"
+    family-names: "Magalhães Cardoso"
+    affiliation: "Instituto Militar de Engenharia (IME)"
+  - given-names: "Bruno"
+    family-names: "Lixandrão Silvestre"
+    affiliation: "Instituto Militar de Engenharia (IME)"
+  - given-names: "Giovana"
+    family-names: "Baroni Cadorin"
+    affiliation: "Instituto Militar de Engenharia (IME)"
+contact:
+  - given-names: "Leonardo"
+    family-names: "Assumpção Moreira"
+    affiliation: "Instituto Militar de Engenharia (IME) — orientador"
+repository-code: "https://github.com/mmagalhaescime/divisao-balanceada-de-areas"
+url: "https://github.com/mmagalhaescime/divisao-balanceada-de-areas"
+license: GPL-2.0-or-later
+version: "0.1.0"
+date-released: "2026-10-28"
+keywords:
+  - QGIS
+  - SAP
+  - DSG
+  - produção cartográfica
+  - balanceamento de carga
+  - Voronoi
